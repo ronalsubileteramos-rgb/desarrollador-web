@@ -1,0 +1,262 @@
+/* ============================================================
+   🌙  ESTILOS GENERALES
+============================================================ */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #021c2a;
+    color: #fff;
+}
+
+/* ============================================================
+   🌙  NAVBAR (FIJA SIN TAPAR CONTENIDO)
+============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: #01121bcc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00eaff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #00eaff;
+}
+
+/* ============================================================
+   🌙  HERO / INICIO
+============================================================ */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #00203fff, #00aaff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    animation: fadeIn 1.5s;
+}
+
+.hero-content p {
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+/* Botón general */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #00eaff;
+    color: #001f3f;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* ============================================================
+   🌙  ABOUT / SOBRE MÍ
+============================================================ */
+.about {
+    padding: 120px 20px;
+    text-align: center;
+    background: #031f33;
+}
+
+.about h2 {
+    font-size: 35px;
+    color: #00eaff;
+}
+
+/* ============================================================
+   🌙  PROYECTOS (HORIZONTAL)
+============================================================ */
+.projects-section {
+    padding: 140px 20px;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 35px;
+    color: #00eaff;
+    margin-bottom: 30px;
+}
+
+.projects-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: nowrap; /* 🔥 IMPORTANTE: evita que bajen */
+}
+
+.project-card {
+    background: #022e44;
+    padding: 25px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00eaff55;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech {
+    color: #00eaff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Botones internos de cards */
+.btn-card {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00eaff;
+    color: #001f3f;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-card:hover {
+    background: white;
+}
+
+/* ============================================================
+   🌙  DETALLES DE PROYECTO
+============================================================ */
+.project-detail {
+    padding: calc(80px + 40px) 20px 100px; /* evita superposición del navbar */
+    text-align: center;
+}
+
+.project-detail h2 {
+    font-size: 35px;
+    color: #00eaff;
+    margin-bottom: 20px;
+}
+
+/* Galería */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.gallery img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00eaff55;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   🌙  CONTACTO
+============================================================ */
+.contact-section {
+    padding: 140px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 35px;
+    color: #00eaff;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: #022e44;
+    padding: 25px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00d9ff55;
+    text-align: center;
+    border: 1px solid #00d9ff33;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    box-shadow: 0 0 25px #00d9ff;
+    transform: translateY(-5px);
+}
+
+.contact-card h3 {
+    color: #00d9ff;
+}
+
+.contact-card p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+/* ============================================================
+   🌙  ANIMACIONES
+============================================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* PARA QUE EL CONTENIDO NO QUEDE TAPADO POR EL NAVBAR */
+.page-content {
+    padding-top: 120px;  /* Ajusta si necesitas más o menos espacio */
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;       /* Más separación entre botones */
+    margin-right: 40px;  /* Separación del borde derecho */
+}
