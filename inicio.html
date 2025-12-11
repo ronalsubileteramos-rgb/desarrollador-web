@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Ronaldo Subilete</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script defer src="animacion.js"></script>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+<body>
+    
+
+    <!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Ronaldo</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <!-- Botón de modo oscuro -->
+    <button id="darkModeBtn" class="dark-btn">🌙</button>
+
+    <!-- Botón menú hamburguesa -->
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+</nav>
+
+    <!-- HERO -->
+    <header id="inicio" class="hero">
+        <div class="hero-content fade-down">
+            <img src="imagen1.png" class="profile-photo">
+            <div class="hero-text animate">
+                <h1>Ronaldo Andre Subilete Ramos</h1>
+                <h2>Ingeniero Informático</h2>
+                <p>Desarrollador apasionado por crear soluciones tecnológicas eficientes e innovadoras.</p>
+
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn">Ver Proyectos</a>
+                    <a href="#contacto" class="btn-outline">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="section fade-in">
+        <h2>Sobre mí</h2>
+        <p class="typed-text">
+    <span id="typed"></span>
+</p>
+
+        <p>
+            Soy un Ingeniero Informático con experiencia en el desarrollo de sistemas y soluciones tecnológicas.
+            Manejo programación backend, bases de datos y diseño de aplicaciones.
+            Me caracterizo por mi capacidad de aprender rápidamente, resolver problemas y trabajar en equipo.
+        </p>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="fade-up">
+    <h2>Habilidades Técnicas</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card fade-up">
+            <i class="fa-solid fa-code skill-icon"></i>
+            <h3>Lenguajes</h3>
+            <p>Java, Python, JavaScript, C#, HTML, CSS</p>
+        </div>
+
+        <div class="skill-card fade-up">
+            <i class="fa-solid fa-database skill-icon"></i>
+            <h3>Bases de Datos</h3>
+            <p>MySQL, PostgreSQL, SQL Server, MongoDB</p>
+        </div>
+
+        <div class="skill-card fade-up">
+            <i class="fa-solid fa-wrench skill-icon"></i>
+            <h3>Herramientas</h3>
+            <p>Git, GitHub, Docker, Postman, VS Code</p>
+        </div>
+
+        <div class="skill-card fade-up">
+            <i class="fa-solid fa-diagram-project skill-icon"></i>
+            <h3>Modelado</h3>
+            <p>Bizagi Modeler, StarUML</p>
+        </div>
+
+    </div>
+</section>
+
+    <!-- PROYECTOS -->
+     <section id="proyectos" class="fade-up">
+   <div class="project-card">
+    <img src="imagen2.png" class="project-img" alt="Proyecto Médico">
+
+    <h3>Sistema Médica – Flutter</h3>
+    <p>
+        Sistema de gestión médica con módulos de pacientes, citas, historial clínico y usuarios.
+    </p>
+    <p><strong>Tecnologías:</strong> Flutter, VS Code</p>
+
+    <a href="https://github.com/ronalsubileteramos-rgb" target="_blank" class="btn-project">
+        Ver en GitHub
+    </a>
+</div>
+
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section fade-in">
+    <div class="contact-card">
+        <h2>Contacto</h2>
+
+        <p><i class="fa-solid fa-envelope"></i> 
+            <strong>Email:</strong> ronalsubileteramos@gmail.com
+        </p>
+
+        <p><i class="fa-solid fa-phone"></i> 
+            <strong>Teléfono:</strong> 983829914
+        </p>
+
+        <p><i class="fa-solid fa-location-dot"></i> 
+            <strong>Ubicación:</strong> Perú
+        </p>
+
+        <p><i class="fa-brands fa-github"></i>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/ronalsubileteramos-rgb" target="_blank">
+                ronalsubileteramos-rgb
+            </a>
+        </p>
+    </div>
+</section>
+
+
+
+
+    <footer>
+        <p>© 2025 - Portafolio de Ronaldo Subilete</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/51983829914" target="_blank" class="whatsapp-float">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+</body>
+</html>

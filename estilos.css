@@ -1,0 +1,854 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FUENTE GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* NAVBAR GENERAL */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0d47a1;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* LINKS DE NAVBAR (ESCRITORIO) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* BOTÓN MODO OSCURO */
+.dark-btn {
+    background: none;
+    border: 2px solid white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* BOTÓN HAMBURGUESA (solo móvil) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+}
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #0d47a1;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        transition: height 0.3s ease;
+        padding: 0;
+    }
+
+    .nav-links.show {
+        height: 240px;
+        padding-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #darkModeBtn {
+        margin-left: 10px;
+    }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #0d47a1;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    .nav-links.show {
+        height: 230px;
+        padding-top: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+/* HERO */
+.hero {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background: linear-gradient(to bottom right, #0d47a1, #1976d2, #2196f3);
+    text-align: center;
+    color: white;
+}
+
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+
+.hero-text {
+    margin-top: 20px;
+}
+
+
+
+.hero-buttons a {
+    margin: 0 10px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+
+.btn {
+    background: white;
+    color: #0d47a1;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e3e3e3;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+
+/* SECCIONES */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* HABILIDADES */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* PROYECTOS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ANIMACIONES */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: #111;
+    color: #eee;
+}
+.dark-mode .navbar {
+    background: #111;
+}
+
+.dark-mode .nav-links a {
+    color: white;
+}
+
+.dark-mode .dark-btn {
+    border-color: white;
+}
+#sobre-mi {
+    max-width: 800px;
+    margin: 50px auto;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    #sobre-mi {
+        padding: 40px 20px;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+
+/* Contenedor de la sección */
+#habilidades {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+/* GRID CORRECTO */
+.skills-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+/* Tarjetas */
+.skill-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 280px;   /* <--- IMPORTANTE: limita el ancho para que no ocupe toda la pantalla */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+/* Íconos */
+.skill-icon {
+    font-size: 2.5rem;
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+/* Hover */
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 22px rgba(0,0,0,0.18);
+}
+
+
+
+.skills-grid {
+    margin-top: 40px;
+}
+
+.skill-card {
+    border: 1px solid #e5e5e5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+.skill-card {
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.12);
+}
+
+.skills-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-img {
+        border-radius: 10px;
+    }
+
+    .btn-project {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+
+.project-card {
+    padding: 25px;
+    border-radius: 18px;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.project-card h3 {
+    margin-top: 10px;
+}
+
+.btn-project {
+    margin-top: 15px;
+}
+
+
+.project-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-project {
+    display: inline-block;
+    margin-top: 10px;
+    background: #0d47a1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-project:hover {
+    background: #1565c0;
+}
+
+@media (max-width: 768px) {
+    #contacto {
+        padding: 40px 15px;
+        font-size: 1rem;
+    }
+}
+
+
+#contacto {
+    padding: 60px 20px;
+    background: #f1f4f8;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+
+#contacto h2 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #0d47a1;
+    padding: 13px;
+    color: white;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* HERO RESPONSIVE */
+@media (max-width: 768px) {
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .hero-buttons a {
+        display: block;
+        margin: 10px auto;
+        width: 160px;
+        text-align: center;
+    }
+}
+
+/* ANIMACIONES BASE */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease-out;
+}
+
+.fade-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.9s ease-out;
+}
+
+.fade-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.9s ease-out;
+}
+
+.fade-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.9s ease-out;
+}
+
+/* Se vuelven visibles */
+.visible {
+    opacity: 1;
+    transform: translate(0px);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+.typed-text {
+    font-size: 1.2rem;
+    height: 28px;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.hero-buttons .btn {
+    background: white;
+    color: #0d47a1;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+body.dark-mode .card {
+    background-color: #1f1f1f !important; /* fondo oscuro */
+    border: 1px solid #333 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .card h3 {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+body.dark-mode .card p {
+    color: #cccccc !important; /* gris claro legible */
+}
+
+body.dark-mode .card i,
+body.dark-mode .card svg {
+    color: #3a86ff !important; /* azul profesional */
+}
+
+body.dark-mode .card:hover {
+    background-color: #2a2a2a !important;
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+
+/* ====== LETRAS DE TARJETAS EN MODO OSCURO ====== */
+
+body.dark-mode .habilidades-container * {
+    color: #ffffff !important;
+}
+
+
+/* ====== MODO OSCURO PARA TARJETAS ====== */
+
+body.dark-mode .skill-card {
+    background-color: #1f1f1f !important; /* Fondo oscuro */
+    color: #ffffff !important; /* Texto blanco */
+    border: 1px solid #333 !important; /* Borde elegante */
+}
+
+/* Títulos */
+body.dark-mode .skill-card h3 {
+    color: #ffffff !important;
+}
+
+/* Descripciones */
+body.dark-mode .skill-card p {
+    color: #cccccc !important;
+}
+
+/* Íconos */
+body.dark-mode .skill-card .skill-icon {
+    color: #3a86ff !important; /* Azul profesional */
+}
+
+body.dark-mode .project-card {
+    background-color: #1f1f1f !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+}
+
+body.dark-mode .project-card h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .project-card p {
+    color: #cccccc !important;
+}
+
+body.dark-mode .project-card strong {
+    color: #ffffff !important;
+}
+
+body.dark-mode .project-card .btn-project {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+}
+
+/* CONTACTO - MODO OSCURO */
+body.dark-mode #contacto {
+    background-color: #1f1f1f !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode #contacto h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode #contacto p {
+    color: #cccccc !important;
+}
+
+body.dark-mode #contacto a {
+    color: #4da3ff !important;
+}
+
+body.dark-mode #contacto strong {
+    color: #ffffff !important;
+}
+
+
+/* ================================
+   SECCIÓN CONTACTO GENERAL
+================================ */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* Tarjeta con efecto vidrio */
+.contact-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-card h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #003a9b;
+}
+
+.contact-card p {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.contact-card a {
+    color: #005ce6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+           MODO OSCURO
+================================ */
+body.dark-mode .contact-card {
+    background: rgba(30, 30, 30, 0.7);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .contact-card h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .contact-card p {
+    color: #cccccc;
+}
+
+body.dark-mode .contact-card a {
+    color: #4da3ff;
+}
+
+/* ================================
+       SECCIÓN CONTACTO
+================================ */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.contact-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 35px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.contact-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #003a9b;
+}
+
+.contact-card p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.contact-card i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #005ce6;
+}
+
+.contact-card a {
+    color: #005ce6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+           MODO OSCURO
+================================ */
+body.dark-mode .contact-card {
+    background: rgba(35, 35, 35, 0.6);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .contact-card h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .contact-card p {
+    color: #ddd;
+}
+
+body.dark-mode .contact-card i {
+    color: #4da3ff;
+}
+
+body.dark-mode .contact-card a {
+    color: #4da3ff;
+}
+
+/* BOTÓN FLOTANTE WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe5d;
+    transform: scale(1.1);
+}
+
+/* Ícono */
+.whatsapp-float i {
+    color: white;
+}
+
+/* MODO OSCURO */
+body.dark-mode .whatsapp-float {
+    background: #22c45c;
+}
+body.dark-mode .whatsapp-float:hover {
+    background: #1ebe5d;
+}
